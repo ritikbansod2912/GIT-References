@@ -1,0 +1,80 @@
+** GIT Configuration **
+
+1) git config
+--> Set configuration of GIT on a global or local project level.
+	a) git config --global user.name "<username>" -> Set the username for your git local repository.
+	b) git config --global user.email "<username>" -> Set the email-id for your git.
+	c) git config --list / git config --global --list -> List out all the git configuration that controls all factors of how git should look and operate.
+
+2) git update-git-for-windows 
+--> Update the git version.
+
+3) git version
+--> Shows git version available in your system.
+	a) git version / git --version / git -v -> any of the commands can be used to check the git version.
+
+4) Setting-up a values for a git config variable
+--> Set/Change the values of a git config variable. Also helps in configuring a alias for a git command.
+	a) git config --global <variable-name> <value>
+
+** Basic git commands **
+------------------------
+
+1) git init
+--> Create / Initiate a new git repository
+	a) git init -> Creates a git repository in current folder.
+	b) git init <directory-name> -> Create a folder and initiates a git repository inside it.
+
+2) git add
+--> Adds unstaged files / untracked changes to the staging area of repository to make changes ready for    commit.
+	a) git add . / git add -A -> Add all untracked changes to the staging area.
+	b) git add <file-name> -> Add a specific changes/file to the staging area.
+	c) git add -u -> Add only updated and deleted files available in unstaged area.
+	d) git add *.extension -> Add all files matching with the wildcard.
+	(-v = verbose -> Helpful as it prompt the messages for operation performed)
+
+3) git commit
+--> Commit the tracked changes available at staging area to the project git repository. Just taking a snapshot of the the changes.
+	a) git commit -m "Commit messages" -> Commit the changes with commit messages.
+	b) git commit --amend -> Commit the changes in latest commit without creating a new commit. Also a commit message can be modified.
+	c) git commit --amend -m "New Commit Message" / git commit -am "New Commit Message" -> Append a new message to the lastest commit done.
+
+4) git status
+--> Shows the status of the untracked and tracked changes available.
+
+5) git log
+--> Shows the commit history logs of the git reposutory. With this, Which person made which changes in which location at what time and on what date can be tracked.
+	a) git log -> Shows the descriptive logs for commits.
+	b) git log --oneline -> Show the single line logs for a commit.
+	c) git log --pretty
+	d) git show --> Show the changes for a particular commit.
+		a) git show -> Show the changes for the latest commit.
+		b) git show <commit-id> -> Show the changes for the particular commit-id
+	e) git log -p --> Show changes for all the commits available in git repository.
+		a) git log -p / git log --patchi
+		b) git log <commit-id> -p -> Similar like [ git show <commit-id> ]
+	f) filter commit logs by data, time, author, commit-message:
+		a) git log --after="Date/Time"  (Date format: YY-MM-DD | Time Format: HH:MM:SS)
+		b) git log --before="Date/Time"
+		c) git log --before="Date/Time" --after="Date/Time"
+		d) git log --author="Author-Name/Author-email"
+		e) git log --grep="Commit-Message"
+
+6) git restore
+--> Move the staged changes from staging area back to the unstaged-untracked state/area.
+	a) git restore --staged . -> Move all the staged changes back to unstaged area.
+	b) git restore --staged <file_name> -> Move the specific file to unstaged area.
+
+7) git rm
+--> Delete/Remove the files from the repository.
+	a) git rm <filename> -> Remove a particular file.
+	b) git rm -r <path-from-which-all-file-should-get-removeid> -> Remove all files.
+
+8) git diff
+-> Compare the different version of changes/commits/data sources. Data sources can be current-working-directory, local-repository, commits, working-tree, etc.
+-> Basically show the difference between two data-sources.
+	a) git diff -> Display changes available at unstaged area against HEAD.
+	b) git diff -> Display changes available at staging area against local repository / HEAD.
+	c) git diff HEAD -> Display the uncommited changes as comparing against the commited changes / local repository / HEAD.
+	d) git diff <commit-id-1> <commit-id-2> -> Display changes difference between two commit.
+	e) git diff <branch1> <branch2> -> Display the differences between two branch.
