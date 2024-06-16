@@ -1,0 +1,12 @@
+Different Hosting Platform for GIT repositories:
+
+a. Bitbucket
+b. GitHub
+c. GitLab
+d. Perforce
+e. Beanstalk
+f. Amazon AWS CodeCommit
+g. Codebase
+h. Microsoft Azure DevOps
+i. SourceForge
+j. Gerrit
